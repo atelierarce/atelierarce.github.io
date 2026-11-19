@@ -20,13 +20,13 @@ html {
 	--color-100: #E3DDCF;
 	--color-200: #8E897D;
 	--color-300: #6C675A;
-	--color-400: #28281E;
+	--color-400: #2D241D;
 	--color-500: #1C1B1B;
-	--text-color-nav-hover: GoldenRod;
+	--text-color-nav-hover: #8F6236;
 	--text-color-nav-active: GoldenRod;
 	--text-color-page: black;
 	/* buttons */
-	--button-primary: #C38E0D;
+	--button-primary: #8F6236;
 	--button-secondary: #8E897D;
 	--button-text-secondary: #1C1B1B;
 	--button-ready: #A8140D;
@@ -50,12 +50,15 @@ body {
 
 h1, h2, h3, h4, h5 {
 	font-family: "Garamond", sans-serif;
+	font-weight: 400;
+	letter-spacing: 1.5px;
 	text-align: center;
 	padding: .4rem;
 }
 
 p, a {
 	line-height: 1.5em;
+	letter-spacing: .5px;
 	padding: .7em;
 }
 
@@ -119,7 +122,7 @@ nav {
 
 /* title */
 
-header #about {
+header #about, header #project {
 	max-width: 1200px;
 	min-width: 0;
 	width: 100%;
@@ -138,20 +141,10 @@ header h2 {
 	color: var(--color-200);
 }
 
-/* section */
-section {
-	/* height of container 
-	height: 100vh; */
-	max-width: 1200px;
-	min-width: 0;
-	width: 100%;
-	justify-items: center;
-	align-items: center;
-}
-
+/* sections */
 /* what's in a bento box */
 
-#bento {
+#projects {
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -181,10 +174,119 @@ section {
 }
 
 .box a:hover img {
-	border: 1px solid GoldenRod;
-	border-radius: .3em;
+	border: 1px solid var(--button-primary);
+	border-radius: 1.5em;
 	box-shadow: 0 0 1px 1px #B8860B;
 }
+
+/* projects */
+.project {
+	display: flex;
+	padding: 5%;
+}
+
+.project-image img {
+}
+
+.project-description {
+	padding: 3%;
+}
+
+.project-description h1 {
+	text-align: left;
+	padding-left: 0;
+}
+
+.project-description p {
+	text-align: left;
+	padding-left: 0;
+}
+
+/* Roadmap */
+
+section #roadmap {
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	width: 100%;
+
+}
+
+#roadmap {
+	display: flex;
+	flex-direction: column;
+	max-width: 800px;
+	width: 100%;
+	/* Styling */
+	background-color: var(--notes);
+	color: var(--color-100);
+	min-width: 0;
+	margin-bottom: 5%;
+}
+
+.roadmap { 
+	background-color: var(--bar);
+	font-size: 1.1rem;
+	padding: 3%;
+	margin: 0;
+}
+
+.roadmap h2 {
+	text-align: left;
+}
+
+.roadmap-data {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	width: 100%;
+	padding: 1%;
+	background: var(--color-400);
+	border-bottom: 8px solid var(--color-500);
+}
+
+.roadmap-radio {
+	display: inline-flex;
+	align-items: center;
+	padding: 1%;
+}
+
+.roadmap-radio .circle {
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+}
+
+.roadmap-radio .ready {
+	background-color: var(--button-ready);
+	outline: 8px solid var(--color-500);
+}
+
+.roadmap-radio .set {
+	background-color: var(--button-set);
+	outline: 8px solid var(--color-500);
+}
+
+.roadmap-radio .go {
+	background-color: var(--button-go);
+	outline: 8px solid var(--color-500);
+}
+
+.roadmap-series {
+	font-size: 1rem;
+	color: var(--color-200);
+}
+
+.roadmap-date {
+	color: var(--color-200);
+
+}
+.roadmap-entry {
+	font-size: 1rem;
+	font-weight: 400;
+}
+
 
 /* journaling */
 
@@ -230,6 +332,7 @@ article {
 
 }
 .series {
+	padding: 1%;
 
 }
 
@@ -272,6 +375,7 @@ justify-content: center;
 align-content: center;
 background-color: var(--bar);
 color: var(--color-200);
+padding: 5%;
 min-width: 0;
 }
 
@@ -281,12 +385,19 @@ min-width: 0;
 	/* Alignment */
 	align-content: center;
 	justify-content: center;
-	padding: 5% 2% 1% 2%;
-	gap: 2rem;
 		/* Styling */
 	color: var(--text-color-light);
 	line-height: 1.2em;
-	
+}
+
+.footer-container h4, .footer-container p, .footer-container a {
+	padding: 1%;
+	text-align: left;
+}
+
+.footer-container a:hover {
+	color: var(--button-primary);
+	text-decoration: underline;
 }
 
 .footer-about {
@@ -316,15 +427,15 @@ footer a {
 }
 
 .footer-container .license {
+	display: flex;
+	width: 100%;
 	align-content: center;
 	justify-content: center;
+	padding: 5%;
 
 }
 
 .license {
-	grid-column-start: 1;
-	grid-column-end: 5;
-	text-align: center;
 	
 }
 
@@ -439,7 +550,4 @@ footer a {
 		padding: 0;
 	}
 
-.license {
-	padding-bottom: 2rem;
-}
 }
