@@ -53,13 +53,21 @@ h1, h2, h3, h4, h5 {
 	font-weight: 400;
 	letter-spacing: 1.5px;
 	text-align: center;
-	padding: .4rem;
+	padding: .4rem .4rem .4rem 0;
 }
 
 p, a {
 	line-height: 1.5em;
 	letter-spacing: .5px;
-	padding: .7em;
+	padding: .7em .7em .7em 0;
+}
+
+.keyword {
+	background-color: var(--color-300);
+	padding: 2.5%;
+	margin: 0 3% 0 0;
+	line-height: 3rem;
+	border-radius: 20px;
 }
 
 img {
@@ -186,6 +194,7 @@ header h2 {
 }
 
 .project-image img {
+	min-width: 300px;
 }
 
 .project-description {
@@ -276,17 +285,30 @@ section #roadmap {
 .roadmap-series {
 	font-size: 1rem;
 	color: var(--color-200);
+	padding-left: 2%;
 }
 
 .roadmap-date {
 	color: var(--color-200);
 
 }
+
 .roadmap-entry {
 	font-size: 1rem;
 	font-weight: 400;
 }
 
+.roadmap-entry a {
+	color: var(--button-primary);
+}
+
+.roadmap-entry a:hover {
+	color: var(--color-100);
+}
+
+.roadmap-entry a p {
+	padding-top: 30px;
+}
 
 /* journaling */
 
@@ -479,6 +501,18 @@ footer a {
 /* Small devices */
 @media only screen and (max-width: 48.75rem) {
 
+		.project-image img {
+			display: flex;
+			flex-wrap: wrap;
+}
+
+.project-description {
+	display: flex;
+			flex-wrap: wrap;
+	width: 100%;
+	padding: 3%;
+}
+
 	.bento-box {
 		display: grid;
 		grid-auto-columns: 200px;
@@ -507,6 +541,15 @@ footer a {
 
 /* Mobile */
 @media only screen and (max-width: 37.5rem) {
+
+.project {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.project-image img {
+	min-width: 200px;
+}
 
 	.backstory {
 		order: 2;
